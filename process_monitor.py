@@ -11,10 +11,10 @@ class ProcessMonitor:
         self.root = root
         self.root.title("🧠 Process Monitor - Tech View")
         self.root.geometry("800x550")
-        self.root.configure(bg="#1e1e2f")  # Dark background
+        self.root.configure(bg="#1e1e2f")  
 
         style = ttk.Style()
-        style.theme_use('clam')  # Modern look
+        style.theme_use('clam') 
         style.configure("Treeview",
                         background="#2b2b3c",
                         foreground="white",
@@ -29,7 +29,7 @@ class ProcessMonitor:
         style.configure("TLabelframe", background="#1e1e2f", foreground="white")
         style.configure("TButton", background="#444", foreground="white", font=('Segoe UI', 10))
 
-        # System Usage Frame
+        
         self.resource_frame = ttk.LabelFrame(root, text="System Usage", padding=10)
         self.resource_frame.pack(fill="x", padx=10, pady=5)
 
@@ -39,7 +39,7 @@ class ProcessMonitor:
         self.memory_label = ttk.Label(self.resource_frame, text="Memory Usage: ", font=('Segoe UI', 11))
         self.memory_label.pack(anchor='w', padx=10)
 
-        # Process List
+        
         self.process_frame = ttk.LabelFrame(root, text="Running Processes", padding=10)
         self.process_frame.pack(fill="both", expand=True, padx=10, pady=5)
 
@@ -50,15 +50,13 @@ class ProcessMonitor:
             self.tree.column(col, width=120, anchor='center')
         self.tree.pack(fill="both", expand=True)
 
-        # Kill Process Button
+        
         self.kill_button = ttk.Button(root, text="Kill Selected Process",
                                       command=self.kill_process)
         self.kill_button.pack(pady=10)
         self.graph_button = ttk.Button(root, text="Show Live Graph", command=self.open_graph)
         self.graph_button.pack(pady=5)
 
-
-        # Background Update Thread
         self.update_thread = threading.Thread(target=self.update_loop, daemon=True)
         self.update_thread.start()
 
