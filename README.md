@@ -1,4 +1,4 @@
-# -RealTime-Process-Monitor-cd-RealTime-Process-Monitor
+# Real-Time Process Monitoring Dashboard
 
 1. Project Overview
 This project is a real-time process monitoring system developed using Python. It provides live insights into CPU and memory usage along with a dynamic table of active processes. Additionally, it features a pop-up graph window for real-time visualization of system resource usage. This tool is especially useful for developers, system administrators, and students for system diagnostics and educational purposes.
